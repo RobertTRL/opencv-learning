@@ -4,7 +4,9 @@ import cv2 # importing the library
 import os
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
-img = cv2.imread(os.path.join(base_dir, "../assets/setup.jpg"), 0)
+img = cv2.imread(os.path.join(base_dir, "../assets/setup.jpg"), 1)
+img = cv2.resize(img, (500, 500)) # resizing the image, write fixed dimension in a tuple
+
 
 """
 cv2.IMREAD_COLOR / 1 : Loads a color image. Any transparency of image will be neglected. It is the default flag.
