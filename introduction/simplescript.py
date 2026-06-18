@@ -7,7 +7,7 @@ base_dir = os.path.dirname(os.path.abspath(__file__))
 img = cv2.imread(os.path.join(base_dir, "../assets/setup.jpg"), 1)
 # img = cv2.resize(img, (500, 500)) resizing the image, write fixed dimension in a tuple
 img = cv2.resize(img, (0, 0), fx=0.5, fy=0.5) # resizes the image on a scale of 0.5
-
+img = cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE) # rotates the image by 90 degrees in a clockwise direction
 
 """
 cv2.IMREAD_COLOR / 1 : Loads a color image. Any transparency of image will be neglected. It is the default flag.
