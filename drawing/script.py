@@ -13,7 +13,7 @@ while True:
     image = opencv.rectangle(image, (width // 2, height // 2), (width, height), (255, 0, 0), 1)
     image = opencv.circle(image, (300,300), 100, (0, 255, 0, 0.3 ), -1)
     image = opencv.putText(image, "Robert is Great!", (200, height - 10), opencv.FONT_HERSHEY_SIMPLEX, 1 ,(255, 255, 255), 5, opencv.LINE_AA)
-
+    # cv2.putText(img, text, bottom_left_corner, fontFace, fontScale, color, thickness=1, lineType=LINE_8)
     opencv.imshow("Frame", image)
 
     if opencv.waitKey(1) == ord('q'):
