@@ -1,7 +1,6 @@
-import numpy as np
 import cv2 as opencv
 
-capture = opencv.VideoCapture(1)
+capture = opencv.VideoCapture(0)
 
 while True:
     ret, frame = capture.read()
@@ -9,8 +8,8 @@ while True:
     width = int(capture.get(3))
     height = int(capture.get(4))
 
-    image = np.zeros(frame.shape, np.uint8)
-    smaller_frame = opencv.resize(frame, (0, 0), fx=0.5, fy=0.5)
+    image = opencv.line(frame, (0, 0), (width, height), (0, 0, 255), 6)
+    image = opencv.line(image, (0, height), (width, 0), (0, 0, 255), 6)
 
     opencv.imshow("Frame", image)
 
